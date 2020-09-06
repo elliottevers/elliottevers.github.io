@@ -12,7 +12,7 @@ Barney Kessell
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/fnoXbqadcjU?rel=0&start=77&end=127" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Here's a diagram:
+Here's a diagram
 
 <img src="../assets/images/diagramTest.png" alt="test image" />
 
