@@ -1,24 +1,17 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "Testing"
 date:   2013-11-10 10:18:00
-categories: Thriller Comedy Horror
 ---
 
-You'll find this post in your `_posts` directory - edit this post and re-build (or run with the `-w` switch) to see your changes!
-To add new posts, simply add a file in the `_posts` directory that follows the convention: YYYY-MM-DD-name-of-post.ext.
+Bill Evans
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QwXAqIaUahI?rel=0&start=711&end=775" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Jekyll also offers powerful support for code snippets:
+Barney Kessell
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/fnoXbqadcjU?rel=0&start=77&end=127" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 
 Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll's GitHub repo][jekyll-gh].
 
