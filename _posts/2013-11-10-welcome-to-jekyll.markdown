@@ -22,7 +22,7 @@ Check out the [Jekyll docs][jekyll] for more info on how to get the most out of 
 [jekyll]:    http://jekyllrb.com
 
 
-<video src="https://user-images.githubusercontent.com/6301308/202551297-244332da-c430-4e4d-8be8-3570e5501a25.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202551297-244332da-c430-4e4d-8be8-3570e5501a25.mov" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202551297-244332da-c430-4e4d-8be8-3570e5501a25.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202551297-244332da-c430-4e4d-8be8-3570e5501a25.mov" controls="controls" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px;">
 </video>
 
 
