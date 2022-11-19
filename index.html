@@ -32,32 +32,67 @@
     </p>
 </section>
 
-<h1>How to tackle the problem</h1>
+<h1>How I approached the problem</h1>
 
 <p>
-    I explored the possibility that these tasks could be
+    I explored the possibility that the completion of these tasks could be trained like a machine-learning model.
 
-    If we liken a patch of neurons to a machine learning model, maybe we can train them in a similar way.
+    If we liken the patch of neurons that is activated when a given musical faculty is exercised to a machine learning model,
+    maybe we can train them in a similar way.
 
     Maybe we should prioritize supervised learning over other types, as that is what makes the money in the industry at
-    the end of the day.  We should have huge corpuses of structured training data.  We should create the tightest feedback loop
+    the end of the day.  We should have huge corpuses of structured training data, automatically collected and labelled.  We should create the tightest feedback loop
     imaginable, and see what happens.  We should distill the result of the action into a continuous variable, and
     hopefully the implicit "function" underneath is learnable, and the completion of the task can be optimized, through some
     biological black box mechanism.
 </p>
 
-<p>musical information retrieval</p>
+<p>
+    There was the problem of how to extract information (concise training data) from a high-dimensional digital artifact like a WAV or MP3 file.
+    When we think about a song, we are interested in details like:
+    <ul>
+    <li>
+        notes (melody, bass, ...)
+    </li>
+    <li>
+        chords
+    </li>
+    <li>
+        measures
+    </li>
+    <li>
+        phrases
+    </li>
+    <li>
+        sections
+    </li>
+    </ul>
+    How can we take a real recording with all its complexities and turn it into its essence?
+</p>
 
 <p>
-    There were problems of fundamental technical infrastructure - can we produce information (notes, chords, ...) from raw audio?
-    Given a stream of (digital) notes, can we send it to our instrument and watch it being played, and in realtime?  Can we play something on
-    our instrument, define a set of rules, or a musical game, have those rules be executed in realtime, and the results displayed
-    to us in a way that is easily digestible?  Can we convert our voice (a very natural way to produce notes) to a digital form, and work
-    those into our rule-processing ecosystem?
-
-    How easily can we define these musical games?  (DSL for music, framework for executing that specification, ...)
-
-    Can we quickly create decent, useful, and robust user interfaces?  Can they be drag-and-drop and WYSIWYG?
+    Then, there were problems of underlying technical infrastructure:
+    <ul>
+        <li>
+            Can we produce information (notes, chords, ...) from raw audio?
+        </li>
+        <li>
+            Given a stream of (digital) notes, can we send it to our instrument and watch it being played, and in realtime?
+        </li>
+        <li>
+            Can we play something on our instrument, define a set of rules, or a musical game, have those rules be execute
+            in realtime, and the results displayed to us in a way that is easily digestible?
+        </li>
+        <li>
+            Can we convert our voice (a very natural way to produce notes) to a digital form, and work those into our digital, rule-processing ecosystem?
+        </li>
+        <li>
+            How easily can we define these musical games?  (DSL for music, framework for executing that specification, ...)
+        </li>
+        <li>
+            Can we quickly create decent, useful, and robust user interfaces?  Can they be drag-and-drop and WYSIWYG?
+        </li>
+    </ul>
 </p>
 
 <h1>What I created</h1>
