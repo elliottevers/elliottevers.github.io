@@ -1,16 +1,87 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
+
+<h1>Motivation for Project/Background</h1>
+<section>
+    <p>
+        In my mid 20s, I quit my job to work on a side project I had been thinking about a lot.  I had always wanted to
+        formalize music and musicianship, and was convinced there was a better way to do things than how they were taught in school, in books, or online.
+    </p>
+    <p>
+        After seeing how enterprise software was written in corporations, I decided to apply those patterns to the problems
+        of musicianship.
+    </p>
+    <p>
+        The important tasks in music - choosing notes, choosing chords, recognizing chords, ... - I knew there had to be a better way than what I had seen.
+        Some musicians randomly choose notes within a scale without knowing what it will sound like beforehand, others already have a
+        sound in their head and know which notes on the fretboard will produce those sounds.  Some people use the rules of western
+        harmony to draw from a range of sensible chords to play after the current one, others hear a good sounding chord in their head and
+        know the frets that produce those sounds.
+    </p>
+    <p>
+        I also wanted to explore other tasks like vocal harmonizing, perfect pitch, ...
+    </p>
+    <p>
+        What you see here are some highlights from a demo video I shot of the software prototype that I used to train myself
+        on these various tasks.  I have completely put down this project for now, as there are many more important things
+        to focus on in life, but there is the possibility that sometime later in life I pick up where I left off.
+    </p>
+</section>
+
+<h1>How to tackle the problem</h1>
+
+<p>
+    I explored the possibility that these tasks could be
+
+    If we liken a patch of neurons to a machine learning model, maybe we can train them in a similar way.
+
+    Maybe we should prioritize supervised learning over other types, as that is what makes the money in the industry at
+    the end of the day.  We should have huge corpuses of structured training data.  We should create the tightest feedback loop
+    imaginable, and see what happens.  We should distill the result of the action into a continuous variable, and
+    hopefully the implicit "function" underneath is learnable, and the completion of the task can be optimized, through some
+    biological black box mechanism.
+</p>
+
+<p>musical information retrieval</p>
+
+<p>
+    There were problems of fundamental technical infrastructure - can we produce information (notes, chords, ...) from raw audio?
+    Given a stream of (digital) notes, can we send it to our instrument and watch it being played, and in realtime?  Can we play something on
+    our instrument, define a set of rules, or a musical game, have those rules be executed in realtime, and the results displayed
+    to us in a way that is easily digestible?  Can we convert our voice (a very natural way to produce notes) to a digital form, and work
+    those into our rule-processing ecosystem?
+
+    How easily can we define these musical games?  (DSL for music, framework for executing that specification, ...)
+
+    Can we quickly create decent, useful, and robust user interfaces?  Can they be drag-and-drop and WYSIWYG?
+</p>
+
+<h1>What I created</h1>
+
+<p>
+    - a library to convert raw audio (WAV, mp3, ...) into a digital form similar to sheet music/jazz lead sheets
+    - a framework to amass training data using the above functionality
+    - a framework to define musical games that could be played in realtime
+    - a library to stream notes to the fretboard via bluetooth
+    - a library to process MIDI notes received from guitar
+    - libraries to interface with useful applications like Ableton Live, Max, Midi/MusicXML editors, ...
+    - a few random musical analysis utilities
+</p>
+
 
 <p>Here's me picking on a decked out guitar I put together.</p>
 
-<video src="https://user-images.githubusercontent.com/6301308/202567942-3a1086b3-eea1-48c6-a88f-7b19d3b8c279.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202567942-3a1086b3-eea1-48c6-a88f-7b19d3b8c279.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202567942-3a1086b3-eea1-48c6-a88f-7b19d3b8c279.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202567942-3a1086b3-eea1-48c6-a88f-7b19d3b8c279.mov" controls="controls">
 </video>
 
 <p>
 It has a mesh of LEDs overlaying the fretboard.  I sent notes to it that I computed on my computer in realtime.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202567957-3db9d9f2-660f-400c-8998-d4e54d3f0d09.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202567957-3db9d9f2-660f-400c-8998-d4e54d3f0d09.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202567957-3db9d9f2-660f-400c-8998-d4e54d3f0d09.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202567957-3db9d9f2-660f-400c-8998-d4e54d3f0d09.mov" controls="controls">
 </video>
 
 <p>
@@ -18,20 +89,20 @@ It has a mesh of LEDs overlaying the fretboard.  I sent notes to it that I compu
     just send the bass notes of the chord progression over at the proper times, which is mostly what you need.  Then you can
     play your lines over the top of the rendered bass, and see a color corresponding to the solfege of the note in your line.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202567991-a5eff804-f163-4f96-8644-1036c81fe85b.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202567991-a5eff804-f163-4f96-8644-1036c81fe85b.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202567991-a5eff804-f163-4f96-8644-1036c81fe85b.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202567991-a5eff804-f163-4f96-8644-1036c81fe85b.mov" controls="controls">
 </video>
 
 <p>
     Choosing notes on an instrument is really inhuman if you think about it, so I decided to write software to decode the tone you
     were singing with your voice, and use that in lieu of notes you played on your guitar.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568016-d87efb6e-6005-423f-94a5-2c043c591938.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568016-d87efb6e-6005-423f-94a5-2c043c591938.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568016-d87efb6e-6005-423f-94a5-2c043c591938.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568016-d87efb6e-6005-423f-94a5-2c043c591938.mov" controls="controls">
 </video>
 
 <p>
     I have no idea what I was doing here but it sure looks complicated...
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568030-a4ef6172-b2de-4f93-be8d-597b3d2817a4.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568030-a4ef6172-b2de-4f93-be8d-597b3d2817a4.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568030-a4ef6172-b2de-4f93-be8d-597b3d2817a4.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568030-a4ef6172-b2de-4f93-be8d-597b3d2817a4.mov" controls="controls">
 </video>
 
 <p>
@@ -39,7 +110,7 @@ It has a mesh of LEDs overlaying the fretboard.  I sent notes to it that I compu
     eyes, that was way more powerful, because I could arrange notes however I wanted and build any instrument imaginable... but
     in reality it was kind of annoying having to play on a completely flat surface all the time.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568047-259ff329-21aa-4fdb-87b1-5171c3f3dd4a.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568047-259ff329-21aa-4fdb-87b1-5171c3f3dd4a.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568047-259ff329-21aa-4fdb-87b1-5171c3f3dd4a.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568047-259ff329-21aa-4fdb-87b1-5171c3f3dd4a.mov" controls="controls">
 </video>
 
 <p>
@@ -47,77 +118,77 @@ It has a mesh of LEDs overlaying the fretboard.  I sent notes to it that I compu
     Slowing things down is also great, in order to give your brain time to process all this information.  I was under the impression
     that by practicing at higher speeds, playing at a regular tempo would be a piece of cake.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568068-f816ffd0-ef98-4ab4-8710-04bc711f32b8.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568068-f816ffd0-ef98-4ab4-8710-04bc711f32b8.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568068-f816ffd0-ef98-4ab4-8710-04bc711f32b8.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568068-f816ffd0-ef98-4ab4-8710-04bc711f32b8.mov" controls="controls">
 </video>
 
 <p>
     I hate sheet music, and like real recordings, so I wanted to extract the information necessary to do this from things that sounded good.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568093-32c1e432-da24-463d-ba65-f95b4074e056.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568093-32c1e432-da24-463d-ba65-f95b4074e056.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568093-32c1e432-da24-463d-ba65-f95b4074e056.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568093-32c1e432-da24-463d-ba65-f95b4074e056.mov" controls="controls">
 </video>
 
 <p>
     Key centers are important, but they can change frequently, especially in jazz, so I wanted a robust method to estimate them with software.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568104-65aa5675-169c-4f41-9e90-bd75bd0f77dc.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568104-65aa5675-169c-4f41-9e90-bd75bd0f77dc.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568104-65aa5675-169c-4f41-9e90-bd75bd0f77dc.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568104-65aa5675-169c-4f41-9e90-bd75bd0f77dc.mov" controls="controls">
 </video>
 
 <p>
     I didn't want to loop over measures, I wanted to loop over meaningful things like phrases, verses, choruses, ... so I used a model
     that could help me achieve that.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568125-8e916b7c-6394-4d31-8d7a-6fa249467f5e.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568125-8e916b7c-6394-4d31-8d7a-6fa249467f5e.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568125-8e916b7c-6394-4d31-8d7a-6fa249467f5e.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568125-8e916b7c-6394-4d31-8d7a-6fa249467f5e.mov" controls="controls">
 </video>
 
 <p>
     Of course, not all songs keep the same tempo throughout, but I still wanted to automatically produce a "sheet music like"
     representation of them.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568141-d26db088-8013-4332-9b59-0cf8a8bf0551.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568141-d26db088-8013-4332-9b59-0cf8a8bf0551.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568141-d26db088-8013-4332-9b59-0cf8a8bf0551.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568141-d26db088-8013-4332-9b59-0cf8a8bf0551.mov" controls="controls">
 </video>
 
 <p>
     I was reallly a perfectionist about rhythm - I wanted to be able to loop over a phrase 100 times, and get into
     a trance-like state, so I didn't want any abrupt things going on musically.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568157-f0309ce6-b5a2-45bd-8de5-3081d7f71773.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568157-f0309ce6-b5a2-45bd-8de5-3081d7f71773.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568157-f0309ce6-b5a2-45bd-8de5-3081d7f71773.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568157-f0309ce6-b5a2-45bd-8de5-3081d7f71773.mov" controls="controls">
 </video>
 
 <p>
     This one didn't end up being too useful, but it was kind of cool... I converted a vocal signal into a Hertz timeseries
     and fed it into a synthesizer
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568174-a3233659-aa18-4edf-b108-94e0006e54fa.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568174-a3233659-aa18-4edf-b108-94e0006e54fa.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568174-a3233659-aa18-4edf-b108-94e0006e54fa.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568174-a3233659-aa18-4edf-b108-94e0006e54fa.mov" controls="controls">
 </video>
 
 <p>
     Here we see that the software representation of the automatically transcribed song could be rendered to sheet music,
     producing a jazz "lead sheet"-like artifact.
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568190-f66bd058-a586-4c95-b5ad-88458af53a7a.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568190-f66bd058-a586-4c95-b5ad-88458af53a7a.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568190-f66bd058-a586-4c95-b5ad-88458af53a7a.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568190-f66bd058-a586-4c95-b5ad-88458af53a7a.mov" controls="controls">
 </video>
 
 <p>
     If we view the brain as a machine-learning model, could we create a machine-learning platform with software
     that could optimize the performance of certain musical tasks?
 </p>
-<video src="https://user-images.githubusercontent.com/6301308/202568205-e56e5f31-45ba-4477-9a7f-922de86a42dd.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568205-e56e5f31-45ba-4477-9a7f-922de86a42dd.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568205-e56e5f31-45ba-4477-9a7f-922de86a42dd.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568205-e56e5f31-45ba-4477-9a7f-922de86a42dd.mov" controls="controls">
 </video>
 
 <p>timeseries classification</p>
-<video src="https://user-images.githubusercontent.com/6301308/202568225-3bfc8742-3cd7-42c5-9bb7-75b27a8e9acb.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568225-3bfc8742-3cd7-42c5-9bb7-75b27a8e9acb.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568225-3bfc8742-3cd7-42c5-9bb7-75b27a8e9acb.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568225-3bfc8742-3cd7-42c5-9bb7-75b27a8e9acb.mov" controls="controls">
 </video>
 
 <p>timeseries prediction</p>
-<video src="https://user-images.githubusercontent.com/6301308/202568245-4347309f-3a62-45be-aa35-d023fe6b3d54.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568245-4347309f-3a62-45be-aa35-d023fe6b3d54.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568245-4347309f-3a62-45be-aa35-d023fe6b3d54.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568245-4347309f-3a62-45be-aa35-d023fe6b3d54.mov" controls="controls">
 </video>
 
 <p>parsing</p>
-<video src="https://user-images.githubusercontent.com/6301308/202568256-fff6f3fc-ed73-44ae-a8de-70415db1eb37.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568256-fff6f3fc-ed73-44ae-a8de-70415db1eb37.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568256-fff6f3fc-ed73-44ae-a8de-70415db1eb37.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568256-fff6f3fc-ed73-44ae-a8de-70415db1eb37.mov" controls="controls">
 </video>
 
 <p>deriving</p>
-<video src="https://user-images.githubusercontent.com/6301308/202568270-67fd74e8-6f96-45ee-92c3-913771fd1fa5.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568270-67fd74e8-6f96-45ee-92c3-913771fd1fa5.mov" controls="controls" style="max-height:640px;">
+<video src="https://user-images.githubusercontent.com/6301308/202568270-67fd74e8-6f96-45ee-92c3-913771fd1fa5.mov" data-canonical-src="https://user-images.githubusercontent.com/6301308/202568270-67fd74e8-6f96-45ee-92c3-913771fd1fa5.mov" controls="controls">
 </video>
 
 </body>
