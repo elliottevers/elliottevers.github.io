@@ -39,17 +39,16 @@
     If we take that as an assumption, then maybe other things would follow:
     <ul>
     <li>
-        We should prioritize supervised learning over other types, as that is the most common type (it is the quicker,
-        easier, more interpretable, ... way of producing value) of learning in the industry.
+        We should prioritize supervised learning, as that is the most common type of learning in the industry.
     </li>
     <li>
-        We should have huge corpuses of structured training data, automatically collected and labelled.
+        We should have a huge corpus of structured training data, automatically collected and labelled.
     </li>
     <li>
         We should create as tight of a feedback loop as we can.
     </li>
     <li>
-        We should map the result of the musical action to a continuously valued scalar, compute its loss/cost, and feed that
+        We should map a musical action to a vector (feature extraction), score it, compute the loss/cost, and feed that
         error signal back to the user.  Hopefully, if a sensible cost function is chosen, the brain has some "biological black box" method to minimize the "cost" (maximize the value/goodness)
         of a musical decision.
     </li>
